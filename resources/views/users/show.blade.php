@@ -20,15 +20,15 @@
             <div class="flex">
                 <div class="px-10 py-5 font-semibold text-center border-r border-l">
                     <div class="uppercase text-xs">Status</div>
-                    <div class="font-2xl">{{ Auth::user()->statuses->count() }}</div>
+                    <div class="font-2xl">{{ $user->statuses->count() }}</div>
                 </div>
                 <div class="px-10 py-5 font-semibold text-center border-r border-l">
-                    <div class="uppercase text-xs">{{ Auth::user()->follows->count() }}</div>
-                    <div class="font-2xl">100</div>
+                    <div class="uppercase text-xs">Following</div>
+                    <div class="font-2xl">{{ $user->follows->count() }}</div>
                 </div>
                 <div class="px-10 py-5 font-semibold text-center border-r border-l">
-                    <div class="uppercase text-xs">{{ Auth::user()->followers->count() }}</div>
-                    <div class="font-2xl">100</div>
+                    <div class="uppercase text-xs">Followers</div>
+                    <div class="font-2xl">{{ $user->followers->count() }}</div>
                 </div>
             </div>
         </x-container>
