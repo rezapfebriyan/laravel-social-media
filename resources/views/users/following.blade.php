@@ -21,7 +21,8 @@
     <x-container>
         <div class="grid grid-cols-2">
             <div class="space-y-5">
-                <x-statuses :statuses="$statuses"></x-statuses>
+                {{-- menampilkan data yg dikirim dari controller --}}
+                <x-following :users="$follows"></x-following>
             </div>
         </div>
     </x-container>

@@ -17,7 +17,7 @@ class TimelineController extends Controller
     {
         //*  Menampilkan status user yg login
         $statuses = Auth::user()->timeline();
-        // $statuses = Auth::user()->statuses; //! statuses = function relasi yg ada diuser model
+        //! $statuses = Auth::user()->statuses |+| statuses = function relasi yg ada diuser model
         
         return view('timeline', compact('statuses'));
     }
