@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExploreUserController;
 use App\Http\Controllers\FollowingController;
 use App\Http\Controllers\ProfileInformationController;
 use App\Http\Controllers\StatusController;
@@ -12,6 +13,8 @@ Route::view('/', 'welcome');
 Route::middleware('auth')->group(function () {
     Route::get('timeline', TimelineController::class)->name('timeline');
     Route::post('status', [StatusController::class, 'store'])->name('statuses.store');
+
+    Route::get('explore', ExploreUserController::class)->name('users.index');
 
     //* following dijadikan wildcard karna invokable method, jadi endpoint nya sesuai apa yg dikirim ke request 
     Route::get('profile/{user}/{follow}', [FollowingController::class, 'index'])->name('following.index');

@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         //! buat user sekalian statusnya
         User::factory()->hasStatuses(5)->count(10)->create();
+
+        $this->call(UserSeeder::class);
     }
 }

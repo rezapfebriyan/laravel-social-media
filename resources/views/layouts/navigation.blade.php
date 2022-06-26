@@ -15,6 +15,10 @@
                     <x-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
                         {{ __('Timeline') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                        {{ __('Explore Users') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -46,7 +50,8 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
                                                                 this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </x-dropdown-link>
@@ -74,8 +79,8 @@
                         <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -87,6 +92,10 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
                 {{ __('Timeline') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                {{ __('Explore Users') }}
             </x-responsive-nav-link>
         </div>
 
@@ -106,7 +115,8 @@
                         <x-responsive-nav-link href="{{ route('profile', Auth::user()->username) }}">
                             View Profile
                         </x-responsive-nav-link>
-                        <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
+                        <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
                                                                         this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-responsive-nav-link>

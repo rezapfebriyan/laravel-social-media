@@ -19,11 +19,9 @@
     <x-statistic :user="$user" />
 
     <x-container>
-        <div class="grid grid-cols-2">
-            <div class="space-y-5">
-                {{-- menampilkan data yg dikirim dari controller --}}
-                <x-following :users="$follows"></x-following>
-            </div>
+        <div class="grid grid-cols-3 gap-5">
+            {{-- menampilkan data yg dikirim dari controller --}}
+            <x-following :users="$follows"></x-following>
         </div>
     </x-container>
 </x-app-layout>
