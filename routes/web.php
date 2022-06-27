@@ -5,10 +5,11 @@ use App\Http\Controllers\FollowingController;
 use App\Http\Controllers\ProfileInformationController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TimelineController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::view('/', 'welcome');
+Route::get('/', WelcomeController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('timeline', TimelineController::class)->name('timeline');
@@ -16,11 +17,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('explore', ExploreUserController::class)->name('users.index');
 
-    //* following dijadikan wildcard karna invokable method, jadi endpoint nya sesuai apa yg dikirim ke request 
-    Route::get('profile/{user}/{follow}', [FollowingController::class, 'index'])->name('following.index');
-    Route::post('profile/{user}', [FollowingController::class, 'store'])->name('following.store');
-
+    Route::prefix('profile')->group(function () {
+        //* following dijadikan wildcard karna invokable method, jadi endpoint nya sesuai apa yg dikirim ke request 
+        Route::get('{user}/{follow}', [FollowingController::class, 'index'])->name('following.index');
+        Route::post('{user}', [FollowingController::class, 'store'])->name('following.store');
+        Route::get('{user}', ProfileInformationController::class)->name('profile')->withoutMiddleware('auth');
+    });
 });
-Route::get('profile/{user}', ProfileInformationController::class)->name('profile');
 
 require __DIR__.'/auth.php';
