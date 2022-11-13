@@ -29,5 +29,5 @@ Dibuat menggunakan Breeze (Tailwind CSS) dan MySQL.
 - jalankan 'php artisan migrate:refresh' untuk membuat tabel-tabel yang diperlukan kedalam database
 - jalankan 'php artisan serve' untuk menjalankan app
 - buka http://localhost:8000 (atau sesuakian dengan port di .env)
-- jika muncul website network di localhost anda, berarti setup sudah berhasil
+- jika muncul website Tuwiter di localhost anda, berarti setup sudah berhasil
 
