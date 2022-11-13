@@ -13,18 +13,17 @@ class UpdateProfileInformationController extends Controller
 
     public function update(Request $request)
     {
-        $request->validate([
+        $attr = $request->validate([
             'name' => ['string', 'min:3', 'max:30', 'required'],
             'email' => ['email', 'string', 'min:3', 'max:30', 'required'],
-            'username' => ['required', 'alpha_num']
+            'username' => ['required', 'alpha_num', 'unique:users,username,' . auth()->id()]
+             //* '...,' . auth()->id() untuk ignore [= id yg lagi login tidak berlaku uniq], biar kalo user edit tanpa ubah usernamenya
         ]);
 
-        auth()->user()->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'username' => $request->username
-        ]);
+        auth()->user()->update($attr);
 
-        return back()->with('message', 'Your profile has been updated');
+        return redirect()
+                ->route('profile', auth()->user()->username)
+                ->with('message', 'Your profile has been updated');
     }
 }
