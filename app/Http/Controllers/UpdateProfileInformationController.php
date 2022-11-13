@@ -18,5 +18,13 @@ class UpdateProfileInformationController extends Controller
             'email' => ['email', 'string', 'min:3', 'max:30', 'required'],
             'username' => ['required', 'alpha_num']
         ]);
+
+        auth()->user()->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'username' => $request->username
+        ]);
+
+        return back()->with('message', 'Your profile has been updated');
     }
 }
