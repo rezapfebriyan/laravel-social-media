@@ -7,9 +7,6 @@
     <x-container>
         <div class="flex">
             <div class="w-full lg:w-1/2">
-                @if (session()->has('message'))
-                    <div class="text-green-600 mb-4">{{ session('message') }}</div>
-                @endif
                 <x-card>
                     <form action="{{ route('profile.update') }}" method="post">
                         @method('put')
