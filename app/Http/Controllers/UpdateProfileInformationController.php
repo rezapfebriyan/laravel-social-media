@@ -11,8 +11,12 @@ class UpdateProfileInformationController extends Controller
         return view('users.edit');
     }
 
-    public function update()
+    public function update(Request $request)
     {
-        
+        $request->validate([
+            'name' => ['string', 'min:3', 'max:30', 'required'],
+            'email' => ['email', 'string', 'min:3', 'max:30', 'required'],
+            'username' => ['required', 'alpha_num']
+        ]);
     }
 }
