@@ -6,7 +6,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
  
-## Tentang Kamar Web Network
+## Tentang Tuwiter Web App
 
 Tuwiter App ini adalah website seperti twitter, namun hanya dapat membuat status, memfollow dan unfollow user lainnya.
 Dibuat menggunakan Breeze (Tailwind CSS) dan MySQL.
