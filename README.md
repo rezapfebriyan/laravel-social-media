@@ -3,18 +3,17 @@
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
  
-## Tentang Kamar Web Network
+## Tentang Tuwiter Web App
 
-Network App ini adalah website seperti twitter, namun hanya dapat membuat status, memfollow dan unfollow user lainnya.
+Tuwiter App ini adalah website seperti twitter, namun hanya dapat membuat status, memfollow dan unfollow user lainnya.
 Dibuat menggunakan Breeze (Tailwind CSS) dan MySQL.
 
 ## Requirement sistem
 
-- Laravel 7.0 keatas, yang di install dan bisa running di komputer kamu. Guide install laravel ada disini (https://laravel.com/docs/7.x/installation)
+- Laravel 8.0, yang di install dan bisa running di komputer kamu. Guide install laravel ada disini (https://laravel.com/docs/8.x/installation)
 - PHP 7 keatas
 - MySQL
 - Local server untuk running database, Misalnya MAMP, Apache atau WAMP (XAMPP untuk Windows)
@@ -29,5 +28,5 @@ Dibuat menggunakan Breeze (Tailwind CSS) dan MySQL.
 - jalankan 'php artisan migrate:refresh' untuk membuat tabel-tabel yang diperlukan kedalam database
 - jalankan 'php artisan serve' untuk menjalankan app
 - buka http://localhost:8000 (atau sesuakian dengan port di .env)
-- jika muncul website network di localhost anda, berarti setup sudah berhasil
+- jika muncul website Tuwiter di localhost anda, berarti setup sudah berhasil
 
