@@ -20,11 +20,9 @@ Dibuat menggunakan Breeze (Tailwind CSS) dan MySQL.
 
 ## Setup
 
-- Karena code di repo ini tidak ada file .env dan folder "vendor", jadi kamu perlu generate file dan folder tersebut dengan bikin project baru di laravel. dengan perintah "laravel new nama-project-baru" atau sejenisnya
-- clone repo ini ke lokal komputer kamu, kemudian copy file .env dan folder "vendor" ke folder tujuan repo.
+- jalankan perintah 'composer install' untuk install requirement-requirement dari code di repo
 - Edit .env dan buat nama database yang anda inginkan (disini saya memberikan nama dbnya "network")
 - buat database baru (terserah mau buat lewat CLI atau MySQL GUI). kosongkan saja data dan table nya karena isinya nanti tinggal anda import dari file .sql pada repo ini
-- jalankan perintah 'composer install' untuk install requirement-requirement dari code di repo
 - jalankan 'php artisan migrate:refresh' untuk membuat tabel-tabel yang diperlukan kedalam database
 - jalankan 'php artisan serve' untuk menjalankan app
 - buka http://localhost:8000 (atau sesuakian dengan port di .env)
